@@ -33,6 +33,11 @@ public class Menu {
         return input.nextLine();
     }
     
+    public double addMoneyOption(){
+        System.out.println("How much money would you like to add to your account?");
+        return Double.parseDouble(input.nextLine());
+    }
+    
     public String askForFile(){
         System.out.println("What is the path of your inventory file?");
         return input.nextLine();

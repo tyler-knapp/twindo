@@ -22,9 +22,22 @@ public class TwindoApplication {
         if(option.equalsIgnoreCase("1")){
             //display items
         }else if(option.equalsIgnoreCase("2")){
+            //order
             String optionTwoInput = menu.optionPageTwo();
+            
         }else{
-            //this is how you quit out of our application
+            //this is where you quit out of our application
+        }
+    }
+    
+    private void menuTwoControlFlow(String option){
+        if(option.equalsIgnoreCase("1")){
+            Account account = new Account();
+            account.addMoneyToAccount(menu.addMoneyOption());
+        }else if(option.equalsIgnoreCase("2")){
+            //Select Products
+        }else{
+        
         }
     }
     
