@@ -21,26 +21,30 @@ public class Menu {
         System.out.println("(1) Display Catering Items");
         System.out.println("(2) Order");
         System.out.println("(3) Quit");
-        return input.nextLine();
+        return getUserInput();
     }
     
     //How to get the current balance to show up here?
-    public String optionPageTwo(){
+    public String optionPageTwo(Account account){
         System.out.println("(1) Add Money");
         System.out.println("(2) Select Products");
         System.out.println("(3) Complete Transaction");
-        System.out.println("current balance: ");
+        System.out.println("current balance " + account.getBalance());
+        return getUserInput();
+    }
+    
+    public String getUserInput(){
         return input.nextLine();
     }
     
-    public double addMoneyOption(){
+    public int addMoneyOption(){
         System.out.println("How much money would you like to add to your account?");
-        return Double.parseDouble(input.nextLine());
+        return Integer.parseInt(input.nextLine());
     }
     
     public String askForFile(){
         System.out.println("What is the path of your inventory file?");
-        return input.nextLine();
+        return getUserInput();
     }
     
 }

@@ -9,6 +9,7 @@ public class TwindoApplication {
     private static final String MENU_OPTION_THREE = "3";
     
     private final Menu menu;
+    private final Account account = new Account();
     private final CSVReader csvReader = new CSVReader();
     
     public TwindoApplication(Menu menu) {
@@ -21,18 +22,23 @@ public class TwindoApplication {
     }
     
     private void controlFlow(String option){
-        if(option.equalsIgnoreCase(MENU_OPTION_ONE)){
-            csvReader.readFromFile(menu.askForFile());
-        }else if(option.equalsIgnoreCase(MENU_OPTION_TWO)){
-            menuTwoControlFlow(menu.optionPageTwo());
-        }else{
-            //this is where you quit out of our application
+    
+        while (!option.equalsIgnoreCase(MENU_OPTION_THREE)) {
+            if(option.equalsIgnoreCase(MENU_OPTION_ONE)){
+                csvReader.readFromFile(menu.askForFile());
+            }else if(option.equalsIgnoreCase(MENU_OPTION_TWO)){
+                menuTwoControlFlow(menu.optionPageTwo(account));
+            }else{
+                break;
+            }
         }
+        
+        
+        
     }
     
     private void menuTwoControlFlow(String option){
         if(option.equalsIgnoreCase(MENU_OPTION_ONE)){
-            Account account = new Account();
             account.addMoneyToAccount(menu.addMoneyOption());
         }else if(option.equalsIgnoreCase(MENU_OPTION_TWO)){
             //Select Products
