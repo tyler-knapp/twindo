@@ -15,12 +15,20 @@ public class TwindoApplication {
     public void run(){
         menu.welcomeMessage();
         csvReader.readFromFile(menu.askForFile());
-        String optionOneInput = menu.optionPageTwo();
-        if(optionOneInput.equalsIgnoreCase("1")){
-            
-        
+        controlFlow(menu.optionPageOne());
+    }
+    
+    private void controlFlow(String option){
+        if(option.equalsIgnoreCase("1")){
+            //display items
+        }else if(option.equalsIgnoreCase("2")){
+            String optionTwoInput = menu.optionPageTwo();
+        }else{
+            //this is how you quit out of our application
         }
     }
+    
+    
     
     public static void main(String[] args){
         Menu menu = new Menu();
