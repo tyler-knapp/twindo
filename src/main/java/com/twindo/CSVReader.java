@@ -1,9 +1,13 @@
 package com.twindo;
 
+import com.twindo.model.Item;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class CSVReader implements ICSVReader{
     
@@ -15,12 +19,18 @@ public class CSVReader implements ICSVReader{
             BufferedReader bufferedReader = new BufferedReader(in);
             
             String s;
-            while((s=bufferedReader.readLine()) != null){
-                System.out.println(s);
+            while((s = bufferedReader.readLine()) != null){
+                splitInventory(s);
             }
         } catch (Exception e){
             System.out.println(e.getMessage());
         }
-        
     }
+    
+    private void splitInventory(String s){
+        String[] inventory = s.split("\\|");
+        System.out.println(Arrays.toString(inventory));
+    }
+    
+    
 }
