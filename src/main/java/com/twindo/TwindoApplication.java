@@ -1,7 +1,5 @@
 package com.twindo;
 
-import java.io.IOException;
-
 public class TwindoApplication {
     
     private static final String MENU_OPTION_ONE = "1";
@@ -18,32 +16,35 @@ public class TwindoApplication {
     
     public void run(){
         menu.welcomeMessage();
-        controlFlow(menu.optionPageOne());
+        //find a better while loop condition
+        while(true){
+            controlFlow(menu.optionPageOne());
+        }
     }
     
     private void controlFlow(String option){
-    
         while (!option.equalsIgnoreCase(MENU_OPTION_THREE)) {
             if(option.equalsIgnoreCase(MENU_OPTION_ONE)){
                 csvReader.readFromFile(menu.askForFile());
+                break;
             }else if(option.equalsIgnoreCase(MENU_OPTION_TWO)){
                 menuTwoControlFlow(menu.optionPageTwo(account));
             }else{
                 break;
             }
         }
-        
-        
-        
     }
     
     private void menuTwoControlFlow(String option){
-        if(option.equalsIgnoreCase(MENU_OPTION_ONE)){
-            account.addMoneyToAccount(menu.addMoneyOption());
-        }else if(option.equalsIgnoreCase(MENU_OPTION_TWO)){
-            //Select Products
-        }else{
-            //Confirm Selection
+        while(!option.equalsIgnoreCase(MENU_OPTION_THREE)){
+            if(option.equalsIgnoreCase(MENU_OPTION_ONE)){
+                account.addMoneyToAccount(menu.addMoneyOption());
+                break;
+            }else if(option.equalsIgnoreCase(MENU_OPTION_TWO)){
+                //Select Products
+            }else{
+                break;
+            }
         }
     }
     
