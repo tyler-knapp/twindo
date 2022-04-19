@@ -16,6 +16,7 @@ public class TwindoApplication {
     
     public void run(){
         menu.welcomeMessage();
+        String csvFile = menu.askForFile();
         //find a better while loop condition
         while(true){
             controlFlow(menu.optionPageOne());

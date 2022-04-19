@@ -27,9 +27,12 @@ public class CSVReader implements ICSVReader{
         }
     }
     
+    public void display(){
+    }
+    
     private void splitInventory(String s){
         String[] inventory = s.split("\\|");
-        System.out.println(Arrays.toString(inventory));
+        System.out.println(inventory[0] + " " + inventory[1] + " " + inventory[2] + " " + inventory[3]);
     }
     
     

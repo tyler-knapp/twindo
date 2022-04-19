@@ -13,8 +13,12 @@ public class Menu {
         System.out.println("Welcome to Twindo, the one stop shop for all of your desires");
         System.out.println("************************************************************");
         System.out.println("************************************************************");
+        System.out.println();
+        System.out.println();
     }
     
+    
+    //How to handle unexpected input?
     public String optionPageOne(){
         System.out.println("Please select an option below");
         System.out.println();
