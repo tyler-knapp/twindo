@@ -17,7 +17,6 @@ public class Menu {
         System.out.println();
     }
     
-    
     //How to handle unexpected input?
     public String optionPageOne(){
         System.out.println("Please select an option below");
