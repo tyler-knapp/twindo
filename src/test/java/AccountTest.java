@@ -12,4 +12,20 @@ public class AccountTest {
         Assert.assertEquals(50, account.getBalance(), 0);
     }
     
+    @Test
+    public void accountBalanceDoesNotGoOverMaximumBalanceAmount(){
+        Account account = new Account();
+        account.addMoneyToAccount(5001);
+        
+        Assert.assertEquals(0, account.getBalance(), 0);
+    }
+    
+    @Test
+    public void cannotAddNegativeDollarsToAccount(){
+        Account account = new Account();
+        account.addMoneyToAccount(-50);
+        
+        Assert.assertEquals(0, account.getBalance(), 0);
+    }
+    
 }
